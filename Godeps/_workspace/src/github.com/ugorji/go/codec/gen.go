@@ -89,7 +89,9 @@ import (
 // v1: Initial Version
 // v2:
 // v3: Changes for Kubernetes:
-//     changes in signature of some unpublished helper methods and codecgen cmdline arguments.
+//
+//	changes in signature of some unpublished helper methods and codecgen cmdline arguments.
+//
 // v4: Removed separator support from (en|de)cDriver, and refactored codec(gen)
 // v5: changes to support faster json decoding. Let encoder/decoder maintain state of collections.
 const GenVersion = 5
@@ -122,7 +124,7 @@ const (
 var (
 	genAllTypesSamePkgErr  = errors.New("All types must be in the same package")
 	genExpectArrayOrMapErr = errors.New("unexpected type. Expecting array/map/slice")
-	genBase64enc           = base64.NewEncoding("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789__")
+	genBase64enc           = base64.NewEncoding("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.")
 	genQNameRegex          = regexp.MustCompile(`[A-Za-z_.]+`)
 )
 
